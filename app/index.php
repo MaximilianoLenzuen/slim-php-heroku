@@ -11,12 +11,14 @@ require __DIR__ . '/../vendor/autoload.php';
 
 // Instantiate App
 $app = AppFactory::create();
+// Set base path
+$app->setBasePath('/app');
 
 // Add error middleware
 $app->addErrorMiddleware(true, true, true);
 
 $app->get('[/]', function (Request $request, Response $response) {    
-    $response->getBody()->write("GET => Bienvenido!!! a SlimFramework");
+    $response->getBody()->write("Version 30/08");
     return $response;
 
 });
